@@ -1,4 +1,3 @@
-
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -90,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         boards = JSON.parse(boards);
     }
+
     boards.forEach((board, index) => {
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
@@ -113,7 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('play-button').addEventListener('click', () => {
         const checkedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
         const selectedIndices = Array.from(checkedCheckboxes).map(cb => parseInt(cb.value, 10));
-
 
 if (selectedIndices.length > 0) {
             localStorage.setItem('selected_bingo_boards', JSON.stringify(selectedIndices));
